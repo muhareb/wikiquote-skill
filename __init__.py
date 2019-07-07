@@ -16,7 +16,8 @@ from adapt.intent import IntentBuilder
 from mycroft import MycroftSkill, intent_file_handler
 import re
 import random
-import wikiquote
+#import wikiquote
+from . import wikiquote2
 
 __author__ = 'danielwine'
 

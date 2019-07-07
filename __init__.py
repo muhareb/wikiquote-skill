@@ -38,8 +38,8 @@ class WikiQuoteSkill(MycroftSkill):
             if not mostRelevant: title = random.choice(titles)
             else: title = titles[0]
             try:
-                quotes = wikiquote.quotes(title, lang=self.wikilang)
-            except wikiquote.utils.DisambiguationPageException:
+                quotes = wikiquote2.quotes(title, lang=self.wikilang)
+            except wikiquote2.utils.DisambiguationPageException:
                 quotes = None
             if quotes and quotes != []:
                 quote = random.choice(quotes)
@@ -53,7 +53,7 @@ class WikiQuoteSkill(MycroftSkill):
     @intent_file_handler('specific.intent')
     def handle_specific_quote_intent(self, message):
         subject = message.data.get('subject')
-        results = wikiquote.search(subject, lang=self.wikilang)
+        results = wikiquote2.search(subject, lang=self.wikilang)
         if len(results) == 0:
             self.speak_dialog("notfound", {'subject': subject})
         else:
@@ -66,7 +66,7 @@ class WikiQuoteSkill(MycroftSkill):
     def handle_random_quote_intent(self, message):
         randomtitles = []
         while randomtitles is None or randomtitles == []:
-            randomtitles = wikiquote.random_titles(lang=self.wikilang)
+            randomtitles = wikiquote2.random_titles(lang=self.wikilang)
         quote, title = self.getRandomQuote(randomtitles)
         self.speak(quote + ' (' + title + ')')
 

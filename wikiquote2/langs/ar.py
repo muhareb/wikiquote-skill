@@ -1,7 +1,7 @@
 from .. import utils
 
 WORD_BLACKLIST = ['quoted', 'Variant:', 'Retrieved', 'Notes:', 'article:']
-MAIN_PAGE = "Main Page"
+MAIN_PAGE = "الصفحة الرئيسية" #"Main Page"
 HEADINGS = ['cast', 'see also', 'external links', 'about']
 
 

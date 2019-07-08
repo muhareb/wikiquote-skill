@@ -13,8 +13,8 @@ modules = [os.path.basename(f)[:-3] for f in modules]
 lang_dict = {}
 
 for m in modules:
-    module = importlib.import_module('.' + m, 'wikiquote2.langs')
-    lang_dict[m] = module
+    # module = importlib.import_module('.' + m, 'wikiquote.langs')
+    lang_dict[m] = 'ar' # module
 
 
 SUPPORTED_LANGUAGES = modules

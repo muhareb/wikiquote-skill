@@ -109,7 +109,7 @@ def extract_quotes_li(tree, max_quotes, headings=None, word_blacklist=None):
     node_list = tree.xpath('//div/ul/li|//div/dl|//h2|//h3')
 
     # Skip all quotes above the first heading
-    skip_to_next_heading = True
+    skip_to_next_heading = False #True
 
     for node in node_list:
         if node.tag not in ['h2', 'h3'] and skip_to_next_heading:
